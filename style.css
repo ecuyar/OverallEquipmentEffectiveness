@@ -1,0 +1,71 @@
+            .row{
+                margin: 1px;
+                color: rgb(99, 13, 53);
+            }
+
+            .box{  
+                background-color: lightgray;
+                box-sizing: border-box;
+                background:#D1EAED;
+                /* background: -webkit-linear-gradient(bottom, rgba(15,147,167,1) 0%,rgba(213,236,238,1) 99%,rgba(215,237,239,0) 100%); */
+                min-width: 200px;
+                min-height: 200px;
+                border: inset;
+                margin: 20px;
+                padding: 0px !important;
+            }
+
+            #DateDisplay{
+                font-size: 30px;
+            }
+
+            .led{
+                text-align: left;
+                margin: 10px;
+
+            }
+
+            h1{
+                
+                text-align: left;
+                margin: 15px;
+                font-size: 50px;
+                font-weight: bold;
+            }
+
+            .row h1{
+                font-family: "Alegreya SC";
+                text-align: left;
+                margin-top: 5px;
+                margin-bottom: 0px; 
+                font-size: 60px;
+                font-weight: bold;
+            }
+
+            .row h2{
+                font-family: "Alegreya SC";
+                margin-top: 15px;
+                margin-bottom: 10px;
+                font-weight: bold;
+                /*background-color: gray;*/
+            }
+
+            h5{
+                
+                text-align: left;
+                font-weight: bold;
+            }
+
+            .row h5 {
+                font-family: "Alegreya SC";
+                text-align: left;
+                font-weight: bold;
+                margin: -5px 0px -5px 15px;
+                font-size: 18px;
+            }
+
+            p{
+                border: 8px;
+                border-color: black;
+            }
+

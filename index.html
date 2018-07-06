@@ -1,0 +1,203 @@
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <title>OEE PROJECT</title>
+
+        <link rel="stylesheet" type="text/css" href="css\style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
+
+
+
+
+        <script type="text/javascript" src="js\date.js"></script>
+
+        <style type="text/css">
+           
+.container-fluid, .jumbotron{
+                margin: 30px;
+            }
+            
+            body{
+                text-align: center; 
+                color: #262626;
+                font-family: "Alegreya SC";
+                background:url(factory2.jpg);
+                background-size:  contain  ;
+            }
+
+
+
+        </style>
+
+    </head>
+
+    <body onload="renderTime();">
+
+    <div class="container-fluid">
+
+        <jumbotron>
+            <div class="row"> 
+
+                <div class="col-sm-6">
+                    <h1>VERİMLİLİK TAKİP</h1>
+                </div>
+
+                <div class="col-sm-3" style="text-align: left;">
+                    <p style="font-size: 30px ; text-align: center;"> <b> <span id="DateDisplay"> </span> </b> </p>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="led"></div>
+                </div>
+
+            </div>
+        </jumbotron>
+
+        <div class="row"> <!--  üst row başlangıç -->
+
+            <div class="col-sm-4">
+
+                <div class="box">
+
+                    <h2>KENAR İŞLEME</h2>
+
+
+                    <hr>
+
+                    <h5> Hedef: 380<br />
+
+                    Gerçekleşen: 376<br />
+
+                    Duraklama: 8 dk </h5>
+
+                    <div class="js-gauge js-gauge--1 gauge"></div>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-4">
+
+                <div class="box">
+
+                    <h2>YÜZEY İŞLEME</h2>
+
+                    <hr>
+
+                    <h5> Hedef: 500<br />
+
+                    Gerçekleşen: 410<br />
+
+                    Duraklama: 10 dk </h5>
+
+                    <div class="js-gauge js-gauge--2 gauge"></div>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-4">
+
+                <div class="box">
+
+                    <h2>DELİK HATTI</h2>
+
+                    <hr>
+
+                    <h5> Hedef: 280<br />
+
+                    Gerçekleşen: 155<br />
+
+                    Duraklama: 6 dk </h5>
+
+                    <div class="js-gauge js-gauge--3 gauge"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row"><!--  alt row başlangıç -->
+            <div class="col-sm-4">
+                <div class="box">
+                    <h2>BOYAHANE</h2>
+                    <hr>
+                    <h5> Hedef: 160<br />
+                        Gerçekleşen: 150<br />
+                        Duraklama: 3 dk </h5>
+                    <div class="js-gauge js-gauge--4 gauge"></div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="box">
+                    <h2>PANEL KESME</h2>
+                    <hr>
+                    <h5> Hedef: 340<br />
+                        Gerçekleşen: 150 <br />
+                        Duraklama: 20 dk </h5>
+                    <div class="js-gauge js-gauge--5 gauge"></div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="box">
+                    <h2>MONTAJ</h2>
+                    <hr>
+                    <h5> Hedef: 480<br />
+                        Gerçekleşen: 451<br />
+                        Duraklama: 5 dk </h5>
+                    <div class="js-gauge js-gauge--6 gauge"></div>
+                </div>
+            </div>
+
+        </div> <!-- alt row bitiş -->
+    </div> <!-- container bitiş -->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/led/raphael.js"></script>
+    <script src="js/led/jquery.classyled.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    $('.led').ClassyLED({
+        type: "time", // time, countdown or random
+        format: "hh:mm", // time format for the led
+        color: "rgb(99, 13, 53)", // hex color of the digits
+        backgroundColor: "lightgray", // hex color of the background
+        size: 7, // LED digit size in pixels
+        rounded: 3, // round radius of the LED digits
+        length: 1, // spacing between the digits
+        fontType: 3 // type of the LED font display
+    });
+    });
+    </script>
+
+    <script src="js\gauge\jquery-1.10.2.min"></script>
+    <script src="js\gauge\raphael-min.js"></script>
+    <script src="js\gauge\kuma-gauge.jquery.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            for (var i = 1; i < 7; i++){
+                $('.js-gauge--'+i).kumaGauge({
+                    value: Math.floor((Math.random() * 99) + 1)
+                });
+            }
+
+            var update = setInterval(function () {
+                for (var i = 1; i < 7; i++) {
+                    var newVal = Math.floor((Math.random() * 99) + 1);
+                    $('.js-gauge--'+i).kumaGauge('update', {
+                        value: newVal
+                    });
+                }
+            }, 3000);
+        });
+
+    </script>
+    
+    </body>
+
+</html>
